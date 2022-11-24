@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.example.spring.pojo.Address" >
+        <property name="address" value="beijin"/>
+    </bean>
+    <bean id="student" class="com.example.spring.pojo.Student">
+        <!--普通数值注入-->
+        <property name="name" value="123123"/>
+        <!--bean注入-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>三国演义</value>
+                <value>战争与和平</value>
+            </array>
+        </property>
+        <!--list注入-->
+        <property name="hobbys">
+            <list>
+                <value>跑步</value>
+                <value>动漫</value>
+            </list>
+        </property>
+        <!--map注入-->
+        <property name="card">
+            <map>
+                <entry key="电话" value="123"/>
+                <entry key="银行卡" value="567"/>
+            </map>
+        </property>
+        <!--set注入-->
+        <property name="games">
+            <set>
+                <value>赛额达</value>
+                <value>lol</value>
+            </set>
+        </property>
+    </bean>
+</beans>

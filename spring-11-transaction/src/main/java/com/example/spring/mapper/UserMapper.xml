@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spring.mapper.UserMapper">
+
+    <select id="getAllUser" resultType="com.example.spring.pojo.User">
+        select name,pwd from user
+    </select>
+
+    <select id="addUser" >
+        insert into user (name,pwd) values(#{name},#{pwd})
+    </select>
+
+    <delete id="deleteUser">
+        delete from user where name=#{name}
+    </delete>
+</mapper>
